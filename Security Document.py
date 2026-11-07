@@ -563,6 +563,6 @@ class App(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     init_db()
+    port = int(os.environ.get("PORT", PORT))
     print("Secure Document Management System started!")
-    print("Open: http://127.0.0.1:8000")
-    HTTPServer((HOST, PORT), App).serve_forever()
+    HTTPServer(("0.0.0.0", port), App).serve_forever()
