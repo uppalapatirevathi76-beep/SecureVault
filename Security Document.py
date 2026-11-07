@@ -20,8 +20,8 @@ UPLOAD_DIR = BASE_DIR / "documents"
 UPLOAD_DIR.mkdir(exist_ok=True)
 
 DB = BASE_DIR / "documents.db"
-HOST = "127.0.0.1"
-PORT = 8000
+HOST = "0.0.0.0"
+PORT = int(os.environ.get("PORT", 8000))
 MAX_UPLOAD = 10 * 1024 * 1024
 
 def connect():
